@@ -1,0 +1,30 @@
+﻿@model MVCMovie.Models.Ratings
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="jumbotron jumbotron-fluid" style="background-color:brown;border-radius:14px">
+<h1>Details</h1>
+
+<div>
+    <h4>Ratings</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.movie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.movie)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.rating)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.rating)
+        </dd>
+    </dl>
+</div>
+<p>
+    <button type="button" class="btn btn-outline-danger" onclick="location.href = '@Url.Action("Splash","Home")'">Go to Home</button>
+</p>
+    </div>

@@ -1,0 +1,64 @@
+﻿@model MVCMovie.Models.Register
+
+@{
+    ViewData["Title"] = "editdetails";
+}
+<section class=" gradient-custom" style="background-color:palevioletred">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h1>Edit Details</h1>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <form asp-action="editdetails">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="form-group">
+                                        <label asp-for="Phoneno" class="control-label"></label>
+                                        <input asp-for="Phoneno" class="form-control" />
+                                        <span asp-validation-for="Phoneno" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Name" class="control-label"></label>
+                                        <input asp-for="Name" class="form-control" />
+                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Age" class="control-label"></label>
+                                        <input asp-for="Age" class="form-control" />
+                                        <span asp-validation-for="Age" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Password" class="control-label"></label>
+                                        <input asp-for="Password" class="form-control" />
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="Save" class="btn btn-primary" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-outline-danger" onclick="location.href = '@Url.Action("Splash","Home")'">Go to Home</button>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

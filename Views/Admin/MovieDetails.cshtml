@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MVCMovie.Models.Ratings>
+
+@{
+    ViewData["Title"] = "MovieDetails";
+}
+<div class="jumbotron jumbotron-fluid" style="background-color:lightgoldenrodyellow;border-radius:15px">
+    
+    <div class="card">
+        <h1>MovieDetails</h1>
+
+        <p>
+            <a asp-action="AddMovie">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.movie)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.rating)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.movie)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.rating)
+                        </td>
+                        <td class="badge rounded-pill badge-warning">
+                            @Html.ActionLink("Delete", "DeleteMovie", new { id = item.movie })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+            <button type="button" class="btn btn-outline-danger" onclick="location.href = '@Url.Action("Index")'">Home</button>
+       
+    
+</div>

@@ -1,0 +1,48 @@
+﻿@model MVCMovie.Models.Register
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="vh-100 bg-image"
+         style="background-color: #8fc4b7;">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h2 class="text-uppercase text-center mb-5">Sign in</h2>
+
+                            <form asp-action="Index">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="Phoneno" class="control-label"></label>
+                                    <input asp-for="Phoneno" type="number" class="form-control" />
+                                    <span asp-validation-for="Phoneno" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label asp-for="Password" class="control-label"></label>
+                                    <input asp-for="Password" type="password" class="form-control" />
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                                <div class="text-center pt-1 mb-5 pb-1">
+                                    <input type="submit" value="Login" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" />
+                                    <a class="text-muted" href="#!">Forgot password?</a>
+                                </div>
+
+                                <div class="d-flex align-items-center justify-content-center pb-4">
+                                    <p class="mb-0 me-2">Don't have an account?   </p>
+                                    <button type="button" class="btn btn-outline-danger" onclick="location.href = '@Url.Action("Index","Register")'">Create New Account</button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,82 @@
+﻿@model MVCMovie.Models.Booking
+
+@{
+    ViewData["Title"] = "MovieBooking";
+}
+<section class=" gradient-custom" style="background-color:palevioletred">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+
+
+                        <h4>Booking</h4>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <form asp-action="MovieBooking">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                                    <div class="form-group">
+                                        <label asp-for="Movie" class="control-label"></label>
+                                        <input asp-for="Movie" class="form-control" />
+                                        <span asp-validation-for="Movie" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Theater" class="control-label"></label>
+                                        <input asp-for="Theater" class="form-control" />
+                                        <span asp-validation-for="Theater" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="City" class="control-label"></label>
+                                        <input asp-for="City" class="form-control" />
+                                        <span asp-validation-for="City" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Price" class="control-label"></label>
+                                        <input asp-for="Price" class="form-control" />
+                                        <span asp-validation-for="Price" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Time" class="control-label"></label>
+                                        <input asp-for="Time" class="form-control" />
+                                        <span asp-validation-for="Time" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="NoOfTickets" class="control-label"></label>
+                                        <input asp-for="NoOfTickets" type="number" class="form-control" />
+                                        <span asp-validation-for="NoOfTickets" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Phno" class="control-label"></label>
+                                        <input asp-for="Phno" class="form-control" />
+                                        <span asp-validation-for="Phno" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="Book Your Ticket" class="btn btn-primary" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>
+            <button type="button" class="btn btn-outline-danger" onclick="location.href = '@Url.Action("Splash","Home")'">Go to Home</button>
+        </p>
+    </div>
+</section>
+
+
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

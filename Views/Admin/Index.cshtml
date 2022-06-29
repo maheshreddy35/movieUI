@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+
+<section class="vh-100 bg-image"
+         style="background-color: darksalmon">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px; background-color: rgba(255, 255, 255, 0.5);">
+                        <div class="card-body p-5">
+                            <div class="text-center">
+
+                            
+                            <p style="font-display:block">Choose Your option</p>
+                            <br />
+                            <div class="class="list-group list-group-light"">
+
+                            <div class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2 list-group-item-primary">
+                            @Html.ActionLink("Available Theaters", "Details")<br />
+                            </div>
+                            <div class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2 list-group-item-success">
+                            @Html.ActionLink("Available Movies", "MovieDetails")
+                            </div>
+                            <div class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2 list-group-item-danger">
+                                @Html.ActionLink("Add Theater", "AddTheater") <br />
+                            </div>
+                            <div class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2 list-group-item-warning">
+                            @Html.ActionLink("Add New Movie", "AddMovie") <br />
+                            </div>
+                            <div class="list-group-item list-group-item-action px-3 border-0 rounded-3 mb-2 list-group-item-info">
+                            @Html.ActionLink("Get all the Users", "AllUsers") <br />
+                            </div>
+                            </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

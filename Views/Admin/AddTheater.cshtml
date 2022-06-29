@@ -1,0 +1,74 @@
+﻿@model MVCMovie.Models.Movies
+
+@{
+    ViewData["Title"] = "AddTheater";
+}
+
+<div class="gradient-custom" style="background-color:palevioletred">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h1>AddTheater</h1>
+
+                        <h4>Movies</h4>
+                        <hr />
+                        <div class="row">
+                            <div class="col-12">
+                                <form asp-action="AddTheater">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="form-group">
+                                        <label asp-for="Id" class="control-label"></label>
+                                        <input asp-for="Id" class="form-control" />
+                                        <span asp-validation-for="Id" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="City" class="control-label"></label>
+                                        <input asp-for="City" class="form-control" />
+                                        <span asp-validation-for="City" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Theatername" class="control-label"></label>
+                                        <input asp-for="Theatername" class="form-control" />
+                                        <span asp-validation-for="Theatername" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Movie" class="control-label"></label>
+                                        <input asp-for="Movie" class="form-control" />
+                                        <span asp-validation-for="Movie" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="Price" class="control-label"></label>
+                                        <input asp-for="Price" class="form-control" />
+                                        <span asp-validation-for="Price" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="Create" class="btn btn-primary" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-danger" onclick="location.href = '@Url.Action("Index")'">Go to Home</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

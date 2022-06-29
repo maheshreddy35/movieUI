@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MVCMovie.Models.Movies>
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="jumbotron jumbotron-fluid" style="background-color:aquamarine;border-radius:15px">
+
+<h1 class="text-center">Details</h1>
+
+<p>
+    <button type="button" class="btn btn-outline-success" onclick="location.href = '@Url.Action("AddTheater","Admin")'">Create New</button>
+</p>
+<table class=" table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Theatername)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Theatername)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td style="font-size:x-large">
+                <span class="badge rounded-pill badge-success">
+                @Html.ActionLink(" Edit ", "EditTheater", new {id=item.Id}) 
+                </span>|
+                <span class="badge rounded-pill badge-warning">
+                @Html.ActionLink(" Delete ", "DeleteTheater", new {id=item.Id})
+                </span>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<p>
+    <button type="button" class="btn btn-outline-danger" onclick="location.href = '@Url.Action("Index","Admin")'">Go to Home</button>
+    
+</p>
+</div>

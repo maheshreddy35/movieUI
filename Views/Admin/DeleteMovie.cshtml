@@ -1,0 +1,32 @@
+﻿@model MVCMovie.Models.Ratings
+
+@{
+    ViewData["Title"] = "DeleteMovie";
+}
+
+<h1>DeleteMovie</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Ratings</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.movie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.movie)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.rating)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.rating)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeleteMovie">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="MovieDetails">Home</a>
+    </form>
+</div>

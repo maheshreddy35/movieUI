@@ -1,0 +1,80 @@
+﻿@model IEnumerable<MVCMovie.Models.Booking>
+
+@{
+    ViewData["Title"] = "MyList";
+}
+<div class="jumbotron jumbotron-fluid" style="background-color:ButtonFace;border-radius:15px">
+    <h1 style="align-content:center">My Wish List</h1>
+    <table class="table">
+        <thead>
+            <tr style="background-color:darkgrey">
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Movie)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Theater)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Time)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phno)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NoOfTickets)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Movie)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Theater)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Time)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phno)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NoOfTickets)
+                    </td>
+                    <td style="border-spacing:20px50px;font-size:x-large">
+                        <div class="badge rounded-pill badge-success">
+                            @Html.ActionLink("Cancel Movie", "RemoveMovie", new { id = item.Id })
+                        </div>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <p>
+        <button type="button" class="btn btn-outline-danger" onclick="location.href = '@Url.Action("Splash","Home")'">Go to Home</button>
+    </p>
+</div>

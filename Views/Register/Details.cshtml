@@ -1,0 +1,62 @@
+﻿@model MVCMovie.Models.Register
+
+@{
+    ViewData["Title"] = "Details";
+
+}
+
+    <div class="jumbotron" style="background-color:deepskyblue;border-radius:10px">
+        <div class="row justify-content-center align-items-center h-150">
+            <div class="card shadow-2-strong card-registration" style="border-radius: 15px">
+                <div class="text-center">
+                    <div>
+                        <h1>Profile</h1>
+
+                        <img src="~/images/IMG_20220625_132227.jpg" height="150px" alt="Profile Icon" />
+                    </div>
+                    <dl class="row" style="font-size:xx-large">
+                        <dt class="col-6">
+                            @Html.DisplayNameFor(model => model.Phoneno)
+                        </dt>
+                        <dd class="col-6">
+                            @Html.DisplayFor(model => model.Phoneno)
+                            <hr />
+                        </dd>
+
+                        <dt class="col-6">
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+                        <dd class="col-6">
+                            @Html.DisplayFor(model => model.Name)
+                            <hr />
+                        </dd>
+                        <dt class="col-6">
+                            @Html.DisplayNameFor(model => model.Age)
+                        </dt>
+                        <dd class="col-6">
+                            @Html.DisplayFor(model => model.Age)
+                            <hr />
+
+                        </dd>
+                        <dt class="col-6">
+                            @Html.DisplayNameFor(model => model.Password)
+                        </dt>
+                        <dd class="col-6">
+                            @Html.DisplayFor(model => model.Password)
+                        </dd>
+
+                    </dl>
+                </div>
+                <p>
+                    <hr />
+                    <br />
+                    <div class="btn-group">
+                    <button type="button" class="btn btn-outline-danger" onclick="location.href = '@Url.Action("Splash","Home")'">Go to Home</button>
+                    <button type="button" class="btn btn-outline-danger" onclick="location.href = '@Url.Action("editdetails","Register")'">Edit Profile</button>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+
+

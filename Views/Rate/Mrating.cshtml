@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MVCMovie.Models.Ratings>
+
+@{
+    ViewData["Title"] = "Mrating";
+}
+<div class="jumbotron justify-content-around" style="background-color:aquamarine;border-radius:14px">
+<h1>Mrating</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.movie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rating)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.movie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rating)
+            </td>
+            <td>
+                <span class="badge rounded-pill badge-success " style="font-size:x-large">
+                @Html.ActionLink("Add Rating", "Addrating", new { id=item.movie }) 
+                </span>
+                |
+                <span class="badge rounded-pill badge-warning " style="font-size:x-large">
+                @Html.ActionLink("Details", "Details", new { id=item.movie }) 
+                </span>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<p>
+    <hr />
+    <button type="button" class="btn btn-outline-danger" onclick="location.href = '@Url.Action("Splash","Home")'">Go to Home</button>
+</p>
+</div>
